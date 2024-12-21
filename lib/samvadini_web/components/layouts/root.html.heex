@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title default="Samvadini" suffix=" · Phoenix Framework">
+      {assigns[:page_title]}
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}></script>
+    <script src="//cdn.temasys.com.sg/adapterjs/0.10.x/adapter.debug.js"></script>
+    <script>
+      function generateToken() {
+        return 'token-' + Math.random().toString(36).substr(2);
+      }
+
+      localStorage.setItem('userToken', generateToken());
+      window.userToken = localStorage.getItem('userToken');
+      console.log("User Token:", window.userToken);
+    </script>
+  </head>
+  <body class="bg-white">
+    {@inner_content}
+  </body>
+</html>
