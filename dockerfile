@@ -44,7 +44,6 @@ RUN mkdir config
 # to ensure any relevant config change will trigger the dependencies
 # to be re-compiled.
 COPY config/config.exs config/${MIX_ENV}.exs config/
-RUN mix phx.gen.secret
 RUN mix deps.compile
 
 COPY priv priv

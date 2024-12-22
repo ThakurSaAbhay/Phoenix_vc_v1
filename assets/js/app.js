@@ -78,7 +78,6 @@ function setupPeerConnection() {
       event.track.onunmute = () => {
         console.log(`${event.track.kind} track unmuted`);
         if (event.track.kind === 'video') {
-          remoteVideo.style.display = 'block';
           remoteVideo.play()
             .catch(e => console.warn("Auto-play failed:", e));
         }

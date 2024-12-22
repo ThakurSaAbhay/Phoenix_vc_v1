@@ -7,6 +7,9 @@
 # General application configuration
 import Config
 
+config :samvadini, SamvadiniWeb.Endpoint,
+  check_origin: ["https://samvadini-v1.onrender.com","http://localhost"]
+
 config :samvadini,
   generators: [timestamp_type: :utc_datetime]
 
