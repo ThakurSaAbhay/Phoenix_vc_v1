@@ -1,4 +1,6 @@
-# Samvadini
+# Phoenix VC
+
+A video call application made with phoenix framework channels and elixer language using their concurrency control to manage webRTC signalling servers.
 
 To start your Phoenix server:
 
